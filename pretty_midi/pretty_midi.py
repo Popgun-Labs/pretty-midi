@@ -57,10 +57,10 @@ class PrettyMIDI(object):
             # Load in the MIDI data using the midi module
             if isinstance(midi_file, six.string_types):
                 # If a string was given, pass it as the string filename
-                midi_data = mido.MidiFile(filename=midi_file)
+                midi_data = mido.MidiFile(filename=midi_file, clip=True)
             else:
                 # Otherwise, try passing it in as a file pointer
-                midi_data = mido.MidiFile(file=midi_file)
+                midi_data = mido.MidiFile(file=midi_file, clip=True)
 
             # Convert tick values in midi_data to absolute, a useful thing.
             for track in midi_data.tracks:
